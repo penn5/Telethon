@@ -22,7 +22,7 @@ class AuthMethods:
             *,
             bot_token: str = None,
             force_sms: bool = False,
-            code_callback: typing.Callable[[], typing.Union[str, int]] = None,
+            code_callback: typing.Callable[[], typing.Union[str, int] = None,
             first_name: str = 'New User',
             last_name: str = '',
             max_attempts: int = 3) -> 'TelegramClient':
@@ -66,7 +66,7 @@ class AuthMethods:
             code_callback (`callable`, optional):
                 A callable that will be used to retrieve the Telegram
                 login code. Defaults to `input()`.
-                The argument may be a coroutine.
+                The argument may return a coroutine.
 
             first_name (`str`, optional):
                 The first name to be used if signing up. This has no
